@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+
+
+void shuffle2(int arrayarray[], int sizesize)
+{
+    int ii = sizesize;
+    while (ii > 1) {
+        int jj = rand() % ii;
+        ii--;
+        int tt = arrayarray[ii];
+        arrayarray[ii] = arrayarray[jj];
+        arrayarray[jj] = tt;
+    }
+}
+
+
+
+int main(void) {
+   
+
+
+ 
+
+            int ii,cc,kk;
+            int arrayarray[75];
+
+            srand((unsigned int)time(NULL));
+
+
+            for (ii = 0; ii < 75; ii++) {
+                arrayarray[ii] = ii + 1;
+            }
+
+
+            shuffle2(arrayarray, sizeof(arrayarray) / sizeof(arrayarray[0]));
+            for (ii = 0; ii < 75; ii++) {
+                printf("0を入力すると数字が出力されます");
+
+                scanf_s("%d", &cc);
+
+                printf("\n");
+
+                printf("%-3d", arrayarray[ii]);
+                printf("今までに選ばれた数字は(");
+                for (kk = 0; kk <= ii; kk++) {
+                    printf("%-3d", arrayarray[kk]);
+                }
+                printf(")です。\n\n");
+
+
+
+            }
+
+
+
+
+        
+
+    return 0;
+
+}
